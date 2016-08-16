@@ -1,0 +1,17 @@
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+x                  x                   x               x
+x           xxx    x     xxxxxx         xxxxxxx        x
+x    xxxxxxx       x          x      xx              xxx
+x    x            xxxxxxx     x     x       x          x
+x    xxxxxxxxx          x     x     x      x           x
+x....x.......xxxxx............x.....x......x...........x
+x............x...xxxxxxxxxxxxxx.....x......x.......xxxxx
+xxxxxxxxx....x......................x......x...........x
+x.......x....x.....xxxxxxxxxxxxxxxxxx......x...........x
+x ..x...x....x......................x.......x..........x
+x...x...x....x......................x.......x..........x
+x...x...x....xxxxxxxxxxxxxxxxxxx...xx.......xxxxxx.....x
+x...x...x....x.....................x.......x...........x
+x...x...x....x.....xxxxxxxxxxxxxxxxx.......x...........x
+<...x........x............................x............>
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

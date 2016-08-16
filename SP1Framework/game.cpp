@@ -1,11 +1,13 @@
 // This is the main file for the game logic and function
-// This is a t
+// 
 //
 #include "game.h"
 #include "Framework\console.h"
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+
+#include "generate_map.h"
 
 double  g_dElapsedTime;
 double  g_dDeltaTime;
@@ -31,12 +33,12 @@ void init( void )
     // Set precision for floating point output
     g_dElapsedTime = 0.0;
     g_dBounceTime = 0.0;
-
+	
     // sets the initial state for the game
     g_eGameState = S_SPLASHSCREEN;
 
-    g_sChar.m_cLocation.X = g_Console.getConsoleSize().X / 2;
-    g_sChar.m_cLocation.Y = g_Console.getConsoleSize().Y / 2;
+	g_sChar.m_cLocation.X = 1;//g_Console.getConsoleSize().X / 2;
+	g_sChar.m_cLocation.Y = 16;// g_Console.getConsoleSize().Y / 2;
     g_sChar.m_bActive = true;
     // sets the width, height and the font name to use in the console
     g_Console.setConsoleFont(0, 16, L"Consolas");
@@ -227,13 +229,46 @@ void renderMap()
     };
 
     COORD c;
-    for (int i = 0; i < 12; ++i)
-    {
-        c.X = 5 * i;
-        c.Y = i + 1;
-        colour(colors[i]);
-        g_Console.writeToBuffer(c, " °±²Û", colors[i]);
-    }
+	ifstream myfile;
+
+	string row;
+	string stage;
+
+	int lvl = 1;
+
+	stage = map(lvl);
+
+	myfile.open(stage);
+
+	int i = 0;
+
+	if (myfile.is_open())
+	{
+		while (getline(myfile, row))
+		{
+			c.X = 1;
+			c.Y = 1 + i;
+	
+			g_Console.writeToBuffer(c, row, 0x03);
+			
+			i++;
+		}
+		myfile.close();
+	}
+
+	else
+	{
+		for (int i = 0; i < 12; ++i)
+		{
+			c.X = 5 * i;
+			c.Y = i + 1;
+
+			colour(colors[i]);
+
+			g_Console.writeToBuffer(c, " °±²Û", colors[i]);
+		}
+	}
+
 }
 
 void renderCharacter()
